@@ -1,0 +1,71 @@
+= asciidoctor-docker-template
+:imagesdir: images
+:icons: font
+
+== Overview
+
+The Documents are generated in a Docker-Container.
+Three scripts are available:
+
+* build-html-docker.sh
+* build-reveal-docker.sh
+* build-pdf-docker.sh
+
+For each output (revealjs, html5 and pdf) a single folder is created.
+
+IMPORTANT: The sourcedir is overwritten in the adoc-file.
+So it works in the preview and in the docker-container.
+
+== Create the Docs
+
+=== Create the adoc-Files in the docs-Folder
+
+image:doc-folder.png[]
+
+=== For the images use the image-folder
+
+image:doc-folder-images.png[]
+
+=== Add necessary Frameworks
+
+For RevealJS ad the revealjs-folder
+
+image:doc-folder-revealjs.png[]
+
+
+== The Header of the adoc-File
+
+----
+= Title
+firstname lastname <email>
+1.0, yyyy-mm-dd
+ifndef::sourcedir[:sourcedir: ../src/main/java]
+ifndef::imagesdir[:imagesdir: images]
+ifndef::backend[:backend: html5]
+:icons: font
+:toc: left
+----
+
+== Generate the docs
+
+=== HTML5
+
+----
+./build-html-docker.sh
+----
+
+=== Slides (Reveal JS)
+
+----
+./build-reveal-docker.sh
+----
+
+=== pdf
+
+----
+./build-pdf-docker.sh
+----
+
+=== The Generated Output
+
+image:doc-folder-output.png[]
