@@ -22,7 +22,7 @@ Start the shell-script to download the reveal-library.
 It downloads, unzips and moves the files to the docs-folder automatically.
 
 ----
-./download-docker.sh
+./download-reveal.sh
 ----
 
 == Create the Docs
