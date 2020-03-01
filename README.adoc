@@ -16,6 +16,15 @@ For each output (revealjs, html5 and pdf) a single folder is created.
 IMPORTANT: The sourcedir is overwritten in the adoc-file.
 So it works in the preview and in the docker-container.
 
+== First Steps
+
+Start the shell-script to download the reveal-library.
+It downloads, unzips and moves the files to the docs-folder automatically.
+
+----
+./download-docker.sh
+----
+
 == Create the Docs
 
 === Create the adoc-Files in the docs-Folder
@@ -65,6 +74,13 @@ ifndef::backend[:backend: html5]
 ----
 ./build-pdf-docker.sh
 ----
+
+=== html5 + reveal + pdf
+
+----
+./build-all.sh
+----
+
 
 === The Generated Output
 

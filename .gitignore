@@ -2,3 +2,5 @@ build-docs-html/
 build-docs-pdf/
 build-docs-revealjs/
 target/
+docs/revealjs/
+revealjs.zip
