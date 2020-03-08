@@ -1,5 +1,5 @@
 = Asciidoctor-Features
-Thomas W. Stütz <t.stuetz@htl-leonding.ac.at>
+Thomas W. Stütz
 1.0, 2020-03-01
 ifndef::sourcedir[:sourcedir: ../src/main/java]
 ifndef::imagesdir[:imagesdir: images]
@@ -8,6 +8,38 @@ ifndef::backend[:backend: html5]
 :toc: left
 
 == Include Source Code
+
+.Source Code File
+[source,java,highlight=13;20]
+----
+public class FileRenamer {
+...
+    private static void renameFiles() {
+        try (Stream<Path> walk = Files.walk(Paths.get(DIRECTORY + File.separator + "styles"))) {
+            walk
+                    .filter(Files::isRegularFile)
+                    .forEach(file -> {
+                        String fileName = file.getFileName().toString();
+                        String newFileName =
+                                fileName.substring(0, fileName.length() - 4)
+                                        + ".min"
+                                        + fileName.substring(fileName.length() - 4);
+                        // tag::rename-file[]
+                        try {
+                            Files.move(file, // <1>
+                                    file.getParent().resolve(newFileName)); // <2>
+                        } catch (IOException e) {
+                            System.err.println(e.getMessage());
+                        }
+                        // end::rename-file[]
+                    });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+...
+}
+----
 
 `[source, java]` +
 `.Java code from project` +
