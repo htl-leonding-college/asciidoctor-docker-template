@@ -27,8 +27,6 @@ https://github.com/<your-git-user>/<your-project>/settings
 
 image:doc-setup-gh-pages.png[]
 
-<<<
-
 == Create the Docs
 
 === Create the adoc-Files in the asciidocs-Folder

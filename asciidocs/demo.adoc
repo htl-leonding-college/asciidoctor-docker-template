@@ -83,6 +83,8 @@ include::{sourcedir}/at/htl/asciidoc/FileRenamer.java[tag=rename-file,indent=0]
 <1> Some comments
 <2> Some further comments
 
+https://asciidoctor.org/docs/user-manual/#highlight-select-lines[Asciidoctor User Manual: Highlight Select Lines]
+
 == Line-Numbering + Highlighting
 
 ----
