@@ -27,12 +27,6 @@ https://htl-leonding-college.github.io/asciidoctor-docker-template/demo.html[]
 
 Leave it empty for now.
 
-=== Activate the gh-pages for your repo.
-
-https://github.com/<your-git-user>/<your-project>/settings
-
-image:doc-setup-gh-pages.png[]
-
 === Clone the Template Repo
 
 ----
@@ -74,6 +68,18 @@ git remote -v
 In case you change your remote repository to https URL, you will be prompted for your username and password next time you use git fetch, git pull or git push.
 
 source: https://www.xenovation.com/blog/source-control-management/git/how-to-change-remote-git-repository[How to change remote git repository]
+
+
+=== Commit some Files into the New Repo
+
+Commit the shell-scripts, .ignore-File, ... into the repo.
+It is not possible to create gh-pages, without content in the repo.
+
+=== Activate the gh-pages for your repo.
+
+https://github.com/<your-git-user>/<your-project>/settings
+
+image:doc-setup-gh-pages.png[]
 
 
 
