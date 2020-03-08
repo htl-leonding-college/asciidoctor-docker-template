@@ -472,6 +472,38 @@ pre.rouge .hll * {
 <div class="sect1">
 <h2 id="_include_source_code"><a class="anchor" href="#_include_source_code"></a>1. Include Source Code</h2>
 <div class="sectionbody">
+<div class="listingblock">
+<div class="title">Source Code File</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">FileRenamer</span> <span class="o">{</span>
+<span class="o">...</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">renameFiles</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">(</span><span class="nc">Stream</span><span class="o">&lt;</span><span class="nc">Path</span><span class="o">&gt;</span> <span class="n">walk</span> <span class="o">=</span> <span class="nc">Files</span><span class="o">.</span><span class="na">walk</span><span class="o">(</span><span class="nc">Paths</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="no">DIRECTORY</span> <span class="o">+</span> <span class="nc">File</span><span class="o">.</span><span class="na">separator</span> <span class="o">+</span> <span class="s">"styles"</span><span class="o">)))</span> <span class="o">{</span>
+            <span class="n">walk</span>
+                    <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="nl">Files:</span><span class="o">:</span><span class="n">isRegularFile</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">file</span> <span class="o">-&gt;</span> <span class="o">{</span>
+                        <span class="nc">String</span> <span class="n">fileName</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="na">getFileName</span><span class="o">().</span><span class="na">toString</span><span class="o">();</span>
+                        <span class="nc">String</span> <span class="n">newFileName</span> <span class="o">=</span>
+                                <span class="n">fileName</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">fileName</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="mi">4</span><span class="o">)</span>
+                                        <span class="o">+</span> <span class="s">".min"</span>
+<span class="hll">                                        <span class="o">+</span> <span class="n">fileName</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">fileName</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="mi">4</span><span class="o">);</span>
+</span>                        <span class="c1">// tag::rename-file[]</span>
+                        <span class="k">try</span> <span class="o">{</span>
+                            <span class="nc">Files</span><span class="o">.</span><span class="na">move</span><span class="o">(</span><span class="n">file</span><span class="o">,</span> <i class="conum" data-value="1"></i><b>(1)</b>
+                                    <span class="n">file</span><span class="o">.</span><span class="na">getParent</span><span class="o">().</span><span class="na">resolve</span><span class="o">(</span><span class="n">newFileName</span><span class="o">));</span> <i class="conum" data-value="2"></i><b>(2)</b>
+                        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                            <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+                        <span class="o">}</span>
+                        <span class="c1">// end::rename-file[]</span>
+                    <span class="o">});</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">...</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
 <div class="paragraph">
 <p><code>[source, java]</code><br>
 <code>.Java code from project</code><br>
@@ -696,7 +728,7 @@ A -left-&gt; B
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2020-03-08 11:36:57 UTC
+Last updated 2020-03-08 13:48:28 UTC
 </div>
 </div>
 <style>
