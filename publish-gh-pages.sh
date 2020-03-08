@@ -5,9 +5,8 @@
 # WILL PUBLISH STUFF ON THE WEBSITE, DON'T SCREW UP
 export old=${PWD}
 ${PWD}/build-html-docker.sh
-exit 0
 cd docs
-git .
+git add .
 git commit -m "update Demo Website"
 git push origin gh-pages
 cd $old
