@@ -8,6 +8,6 @@ ${PWD}/build-html-docker.sh
 cd docs
 git add .
 git commit -m "update Demo Website"
-git push origin gh-pages
+git push origin master
 cd $old
 
