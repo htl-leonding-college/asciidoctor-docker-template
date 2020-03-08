@@ -33,6 +33,8 @@ image:doc-setup-gh-pages.png[]
 
 image:doc-folder.png[]
 
+CAUTION: Don't remove `docinfo.html`. This file is needed for highlighting.
+
 === For images use the image-folder
 
 image:doc-folder-images.png[]
