@@ -113,6 +113,8 @@ image:doc-folder-revealjs.png[]
 
 == Available scripts
 
+IMPORTANT: Before using the scripts, revisit them carefully.
+
 |===
 | script | purpose
 
