@@ -136,7 +136,7 @@ This script is used by `build-reveal-docker.sh`.
 | deletes all output-files, which are #not# necessary for the gh-pages
 
 | `publish-gh-pages.sh`
-| builds the html-output and publish it on the gh-pages.
+| creates the html-output and publish it on the gh-pages.
 
 |===
 
