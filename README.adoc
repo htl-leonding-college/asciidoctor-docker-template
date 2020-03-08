@@ -4,7 +4,7 @@
 
 == Overview
 
-The documents are generated in a Docker-Container.
+The documents are generated in a Docker-container.
 Three scripts are available:
 
 * for html-pages -> build-html-docker.sh
@@ -13,19 +13,69 @@ Three scripts are available:
 
 For each output (revealjs, html5 and pdf) a single folder is created.
 
-IMPORTANT: The html-output is generated into a `docs`-folder, so it is pubished to gh-pages automatically.
+IMPORTANT: The html-output is generated into a `docs`-folder, so it is published to gh-pages automatically.
 
 == gh-pages
 
+This is the gh-page of this template-project.
+
 https://htl-leonding-college.github.io/asciidoctor-docker-template/demo.html[]
 
-== Preparations
+== Steps to your own doc-repo
 
-Activate the gh-pages for your repo.
+=== Create your own github-repo
+
+Leave it empty for now.
+
+=== Activate the gh-pages for your repo.
 
 https://github.com/<your-git-user>/<your-project>/settings
 
 image:doc-setup-gh-pages.png[]
+
+=== Clone the Template Repo
+
+----
+git clone https://github.com/htl-leonding-college/asciidoctor-docker-template.git
+----
+
+=== Change the Remote Origin
+
+For your own documentation change the remote origin to
+your own empty git-repo and commit your own docs.
+
+* Rename folder of project (from `asciidoctor-docker-template` to <your-repo-name>)
+* Rename Project
+* Project Structure - Project - Rename Project
+* change git remote
+
+.Your current remote origin
+----
+git remote -v
+----
+
+.Change the remote origin
+----
+git remote set-url origin <new repo link>
+----
+
+ie
+
+----
+git remote set-url origin https://github.com/htl-leonding/asciidoctor-docker-testdrive.git
+----
+
+.Your new remote origin
+----
+git remote -v
+----
+
+
+In case you change your remote repository to https URL, you will be prompted for your username and password next time you use git fetch, git pull or git push.
+
+source: https://www.xenovation.com/blog/source-control-management/git/how-to-change-remote-git-repository[How to change remote git repository]
+
+
 
 == Create the Docs
 
@@ -96,33 +146,5 @@ This script is used by `build-reveal-docker.sh`.
 gh-pages need the doc-folder for publishing.
 
 image:doc-folder-output.png[]
-
-== How to change the repository
-
-For your own documentation clone the project, change the remote origin to
-your own empty git-repo and commit your own docs.
-
-* Rename folder of project
-* Rename Project
-* Project Structure - Project - Rename Project
-* change git remote
-
-----
-git remote -v
-----
-
-----
-git remote set-url origin <new repo link>
-----
-
-ie
-
-----
-git remote set-url origin https://github.com/htl-leonding/asciidoctor-docker-testdrive.git
-----
-
-In case you change your remote repository to https URL, you will be prompted for your username and password next time you use git fetch, git pull or git push.
-
-source: https://www.xenovation.com/blog/source-control-management/git/how-to-change-remote-git-repository[How to change remote git repository]
 
 
