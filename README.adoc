@@ -85,18 +85,8 @@ image:doc-folder.png[]
 
 CAUTION: Don't remove `docinfo.html`. This file is needed for highlighting.
 
-=== For images use the image-folder
 
-image:doc-folder-images.png[]
-
-=== Necessary Frameworks
-
-For RevealJS the revealjs-folder will be added automatically
-
-image:doc-folder-revealjs.png[]
-
-
-== The Header of the adoc-File
+=== The Header of the adoc-File
 
 ----
 = Title
@@ -108,6 +98,18 @@ ifndef::backend[:backend: html5]
 :icons: font
 :toc: left
 ----
+
+
+=== For images use the image-folder
+
+image:doc-folder-images.png[]
+
+=== Necessary Frameworks
+
+For RevealJS the revealjs-folder will be added automatically
+
+image:doc-folder-revealjs.png[]
+
 
 == Available scripts
 
