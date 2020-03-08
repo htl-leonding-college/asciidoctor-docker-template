@@ -1,7 +1,15 @@
-BUILD_DIR="build-docs-html"
+set -e
+# copy to gh-pages
+BUILD_DIR="docs"
 rm -rf -v $BUILD_DIR # else plantuml diagrams won't be rebuilt
-cp -r -p -v docs $BUILD_DIR
+# do not copy revealjs
+mkdir -p docs
+cp -r -p -v asciidocs/images $BUILD_DIR/images/
+cp -r -p -v asciidocs/themes $BUILD_DIR
+cp -r -p -v asciidocs/docinfo.html $BUILD_DIR
+cp -r -p -v asciidocs/*.adoc $BUILD_DIR
 cp -r -p -v src $BUILD_DIR
+
 docker run --rm \
            -v ${PWD}/$BUILD_DIR:/documents \
            asciidoctor/docker-asciidoctor asciidoctor \
@@ -9,6 +17,9 @@ docker run --rm \
            -a icons=font \
            -a experimental=true \
            -a source-highlighter=rouge \
+           -a rouge-theme=github \
+           -a rouge-linenums-mode=inline \
+           -a docinfo=shared \
            -a imagesdir=images \
            -a toc=left \
            -a toclevels=2 \
@@ -19,7 +30,36 @@ docker run --rm \
            -b html5 \
            '*.adoc'
 
+rm -rf -v $BUILD_DIR/revealjs
+rm -rf -v $BUILD_DIR/.asciidoctor
+rm -rf -v $BUILD_DIR/*.adoc
+rm -v $BUILD_DIR/docinfo.html
+
 # https://github.com/asciidoctor/docker-asciidoctor
 
+# source-highlighter [highlightjs,rouge,coderay,prettify, pygments]
+
+# Rouge
+# https://asciidoctor.org/docs/user-manual/#rouge
+# rouge-style [base16,bw,colorful,github,gruvbox,igor_pro,magritte,molokai,monokai,monokai_sublime,pastie,thankful_eyes,tulip]
+#           -a source-highlighter=rouge \
+#           -a rouge-theme=gruvbox \
+#           -a rouge-linenums-mode=inline \
+#           -a docinfo=shared \
+
+
+# Highlightjs
+#           -a source-highlighter=highlightjs \
 #           -a highlightjsdir=highlight \
 #           -a highlightjs-theme=gruvbox-dark \
+
+#Pygmrnts
+# pygments ist derzeit nicht im docker-image enthalten, da im docker image nur python3 verfügbar ist
+#           -a source-highlighter=pygments \
+#           -a pygments-style=emacs \
+
+# Creating a Dockerized Hugo + AsciiDoctor Toolchain
+# https://rgielen.net/posts/2019/creating-a-dockerized-hugo-asciidoctor-toolchain/
+# https://rgielen.net/posts/2019/creating-a-blog-with-hugo-and-asciidoctor/
+
+

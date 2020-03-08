@@ -7,37 +7,35 @@
 The Documents are generated in a Docker-Container.
 Three scripts are available:
 
-* build-html-docker.sh
-* build-reveal-docker.sh
-* build-pdf-docker.sh
+* for html-pages -> build-html-docker.sh
+* for slides -> build-reveal-docker.sh
+* for pds -> build-pdf-docker.sh
 
 For each output (revealjs, html5 and pdf) a single folder is created.
 
-IMPORTANT: The sourcedir is overwritten in the adoc-file.
-So it works in the preview and in the docker-container.
+IMPORTANT: The html-output is generated into a `docs`-folder, so it is pubished to gh-pages automatically.
 
-== First Steps
+== Preparations
 
-Start the shell-script to download the reveal-library.
-It downloads, unzips and moves the files to the docs-folder automatically.
+https://github.com/<your-git-user>/<your-project>/settings
 
-----
-./download-reveal.sh
-----
+image:doc-setup-gh-pages.png[]
+
+<<<
 
 == Create the Docs
 
-=== Create the adoc-Files in the docs-Folder
+=== Create the adoc-Files in the asciidocs-Folder
 
 image:doc-folder.png[]
 
-=== For the images use the image-folder
+=== For images use the image-folder
 
 image:doc-folder-images.png[]
 
-=== Add necessary Frameworks
+=== Necessary Frameworks
 
-For RevealJS ad the revealjs-folder
+For RevealJS the revealjs-folder will be added automatically
 
 image:doc-folder-revealjs.png[]
 
@@ -85,3 +83,30 @@ ifndef::backend[:backend: html5]
 === The Generated Output
 
 image:doc-folder-output.png[]
+
+== How to change the repository
+
+* Rename folder of project
+* Rename Project
+* Project Structur - Project - Rename Project
+* change git remote
+
+----
+git remote -v
+----
+
+----
+git remote set-url origin <new repo link>
+----
+
+ie
+
+----
+git remote set-url origin https://github.com/htl-leonding/asciidoctor-docker-testdrive.git
+----
+
+In case you change your remote repository to https URL, you will be prompted for your username and password next time you use git fetch, git pull or git push.
+
+source: https://www.xenovation.com/blog/source-control-management/git/how-to-change-remote-git-repository[How to change remote git repository]
+
+

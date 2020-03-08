@@ -1,0 +1,121 @@
+= Asciidoctor-Features
+Thomas W. Stütz <t.stuetz@htl-leonding.ac.at>
+1.0, 2020-03-01
+ifndef::sourcedir[:sourcedir: ../src/main/java]
+ifndef::imagesdir[:imagesdir: images]
+ifndef::backend[:backend: html5]
+:icons: font
+:toc: left
+
+== Include Source Code
+
+`[source, java]` +
+`.Java code from project` +
+`----` +
+`include::{sourcedir}/at/htl/asciidoc/FileRenamer.java[tag=rename-file,indent=0]` +
+`----`
+
+[source, java]
+.Java code from project
+----
+include::{sourcedir}/at/htl/asciidoc/FileRenamer.java[tag=rename-file,indent=0]
+----
+
+<1> Some comments
+<2> Some further comments
+
+== Line Numbering the source code
+
+----
+[source,java,linenums]
+----
+
+[source,java,linenums]
+.Java code from project
+----
+include::{sourcedir}/at/htl/asciidoc/FileRenamer.java[tag=rename-file,indent=0]
+----
+
+== Highlight Source Code
+
+----
+[source,java,highlight=4..5]
+----
+
+[source,java,highlight=4..5]
+.Java code from project
+----
+include::{sourcedir}/at/htl/asciidoc/FileRenamer.java[tag=rename-file,indent=0]
+----
+
+<1> Some comments
+<2> Some further comments
+
+== Line-Numbering + Highlighting
+
+----
+[source,java,linenums,highlight=4..5]
+----
+
+[source,java,linenums,highlight=4..5]
+.Java code from project
+----
+include::{sourcedir}/at/htl/asciidoc/FileRenamer.java[tag=rename-file,indent=0]
+----
+
+<1> Some comments
+<2> Some further comments
+
+== Images
+
+With the backend attribute, it is possible to control the output:
+
+* In the pdf the image is full-size
+* in the slides and html the image is 50% sized
+
+----
+\ifdef::backend-html5,backend-revealjs[image:animal-pet-cute-kitten-45201.jpg[width=50%]]
+\ifdef::backend-pdf[image:animal-pet-cute-kitten-45201.jpg[]]
+----
+
+.Cute kitten (credits to https://www.pexels.com/@pixabay[pixabay])
+ifdef::backend-html5,backend-revealjs[image:animal-pet-cute-kitten-45201.jpg[width=50%]]
+ifdef::backend-pdf[image:animal-pet-cute-kitten-45201.jpg[]]
+
+
+== Diagrams
+
+----
+[plantuml,bsp,png]
+
+@startuml
+class A
+class B
+A -left-> B
+@enduml
+----
+
+[plantuml,bsp,png]
+----
+@startuml
+class A
+class B
+A -right-> B
+@enduml
+----
+
+Links:
+
+* https://mrhaki.blogspot.com/2019/12/awesome-asciidoctor-auto-number-callouts.html[Haki-Blog] -> look at the "related posts" - links at the end of the post
+* https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/
+* https://asciidoctor.org/docs/asciidoc-writers-guide/
+* https://powerman.name/doc/asciidoc[Powerman Cheat Sheet]
+* Froscon 18: Documentation with any editor
+https://media.ccc.de/v/froscon2018-2192-documentation_with_any_editor[movie]
+https://programm.froscon.de/2018/system/event_attachments/attachments/000/000/498/original/froscon13-documentationwithanyeditor.pdf[pdf]
+* https://www.vogella.com/tutorials/AsciiDoc/article.html[Vogella]
+* Writing documentation with Asciidoctor
+https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=2ahUKEwj2v4nf4oroAhVkrHEKHbwPCWQQwqsBMAB6BAgKEAQ&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DaAEXZaL9UUE&usg=AOvVaw3wAmZiQkYusBQ8_BNRBLJi[movie]
+https://www.eclipsecon.org/europe2015/sites/default/files/slides/2015-11-03_Writing_documentation_with_Asciidoctor.pdf[pdf]
+* https://www.eclipsecon.org/europe2015/sites/default/files/slides/2015-11-03_Writing_documentation_with_Asciidoctor.pdf[Asciidoc Book Editor based on JavaFX 8]
+* https://plugins.jetbrains.com/plugin/7391-asciidoc[Asciidoctor IntelliJ Plugin Project]
