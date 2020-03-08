@@ -452,7 +452,6 @@ pre.rouge .hll * {
 <h1>Asciidoctor-Features</h1>
 <div class="details">
 <span id="author" class="author">Thomas W. Stütz</span><br>
-<span id="email" class="email"><a href="mailto:t.stuetz@htl-leonding.ac.at">t.stuetz@htl-leonding.ac.at</a></span><br>
 <span id="revnumber">version 1.0,</span>
 <span id="revdate">2020-03-01</span>
 </div>
@@ -486,16 +485,16 @@ pre.rouge .hll * {
                         <span class="nc">String</span> <span class="n">newFileName</span> <span class="o">=</span>
                                 <span class="n">fileName</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">fileName</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="mi">4</span><span class="o">)</span>
                                         <span class="o">+</span> <span class="s">".min"</span>
-<span class="hll">                                        <span class="o">+</span> <span class="n">fileName</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">fileName</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="mi">4</span><span class="o">);</span>
-</span>                        <span class="c1">// tag::rename-file[]</span>
-                        <span class="k">try</span> <span class="o">{</span>
+                                        <span class="o">+</span> <span class="n">fileName</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">fileName</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="mi">4</span><span class="o">);</span>
+<span class="hll">                        <span class="c1">// tag::rename-file[]</span>
+</span>                        <span class="k">try</span> <span class="o">{</span>
                             <span class="nc">Files</span><span class="o">.</span><span class="na">move</span><span class="o">(</span><span class="n">file</span><span class="o">,</span> <i class="conum" data-value="1"></i><b>(1)</b>
                                     <span class="n">file</span><span class="o">.</span><span class="na">getParent</span><span class="o">().</span><span class="na">resolve</span><span class="o">(</span><span class="n">newFileName</span><span class="o">));</span> <i class="conum" data-value="2"></i><b>(2)</b>
                         <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
                             <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
                         <span class="o">}</span>
-                        <span class="c1">// end::rename-file[]</span>
-                    <span class="o">});</span>
+<span class="hll">                        <span class="c1">// end::rename-file[]</span>
+</span>                    <span class="o">});</span>
         <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
             <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
         <span class="o">}</span>
@@ -728,7 +727,7 @@ A -left-&gt; B
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2020-03-08 13:48:28 UTC
+Last updated 2020-03-08 13:50:35 UTC
 </div>
 </div>
 <style>
