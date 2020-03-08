@@ -15,6 +15,10 @@ For each output (revealjs, html5 and pdf) a single folder is created.
 
 IMPORTANT: The html-output is generated into a `docs`-folder, so it is pubished to gh-pages automatically.
 
+== gh-pages
+
+https://htl-leonding-college.github.io/asciidoctor-docker-template/demo.html[]
+
 == Preparations
 
 https://github.com/<your-git-user>/<your-project>/settings
@@ -53,42 +57,52 @@ ifndef::backend[:backend: html5]
 :toc: left
 ----
 
-== Generate the docs
+== Available scripts
 
-=== HTML5
+|===
+| script | purpose
 
-----
-./build-html-docker.sh
-----
+| `build-html-docker.sh`
+| creates the html-output
 
-=== Slides (Reveal JS)
+| `build-pdf-docker.sh`
+| creates the html-output
 
-----
-./build-reveal-docker.sh
-----
+| `build-reveal-docker.sh`
+| creates the html-output
 
-=== pdf
+| `download-reveal.sh`
+| downloads the reveal-library from the github-repo and unzips the files.
+This script is used by `build-reveal-docker.sh`.
 
-----
-./build-pdf-docker.sh
-----
+| `build-all.sh`
+| create the html-, pdf-, and revealjs-output
 
-=== html5 + reveal + pdf
+| `clean-all.sh`
+| deletes all output-files, which are #not# necessary for the gh-pages
 
-----
-./build-all.sh
-----
+| `publish-gh-pages.sh`
+| builds the html-output and publish it on the gh-pages.
+
+|===
+
+
 
 
 === The Generated Output
+
+gh-pages need the doc-folder for publishing.
 
 image:doc-folder-output.png[]
 
 == How to change the repository
 
+For your own documentation clone the project, change the remote origin to
+your own empty git-repo and commit your own docs.
+
 * Rename folder of project
 * Rename Project
-* Project Structur - Project - Rename Project
+* Project Structure - Project - Rename Project
 * change git remote
 
 ----
