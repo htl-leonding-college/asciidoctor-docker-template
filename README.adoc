@@ -21,6 +21,8 @@ https://htl-leonding-college.github.io/asciidoctor-docker-template/demo.html[]
 
 == Preparations
 
+Activate the gh-pages for your repo.
+
 https://github.com/<your-git-user>/<your-project>/settings
 
 image:doc-setup-gh-pages.png[]
