@@ -12,7 +12,7 @@ cp -r -p -v src $BUILD_DIR
 
 docker run --rm \
            -v ${PWD}/$BUILD_DIR:/documents \
-           asciidoctor/docker-asciidoctor asciidoctor \
+           asciidoctor/docker-asciidoctor  /bin/bash -c "asciidoctor \
            -r asciidoctor-diagram \
            -a icons=font \
            -a experimental=true \
@@ -28,10 +28,10 @@ docker run --rm \
            -a favicon=themes/favicon.png \
            -a sourcedir=src/main/java \
            -b html5 \
-           '*.adoc'
+           '*.adoc' && rm -rf ./.asciidoctor && echo Done"
 
 rm -rf -v $BUILD_DIR/revealjs
-rm -rf -v $BUILD_DIR/.asciidoctor
+#rm -rf -v $BUILD_DIR/.asciidoctor
 rm -rf -v $BUILD_DIR/*.adoc
 rm -v $BUILD_DIR/docinfo.html
 
