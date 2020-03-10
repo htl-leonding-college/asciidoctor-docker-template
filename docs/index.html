@@ -5,9 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<meta name="author" content="Thomas W. Stütz">
+<meta name="author" content="firstname lastname">
 <link rel="icon" type="image/png" href="themes/favicon.png">
-<title>Asciidoctor-Features</title>
+<title>My Project</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -449,283 +449,50 @@ pre.rouge .hll * {
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Asciidoctor-Features</h1>
+<h1>My Project</h1>
 <div class="details">
-<span id="author" class="author">Thomas W. Stütz</span><br>
+<span id="author" class="author">firstname lastname</span><br>
 <span id="revnumber">version 1.0,</span>
-<span id="revdate">2020-03-01</span>
+<span id="revdate">yyyy-mm-dd</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_include_source_code">1. Include Source Code</a></li>
-<li><a href="#_line_numbering_the_source_code">2. Line Numbering the source code</a></li>
-<li><a href="#_highlight_source_code">3. Highlight Source Code</a></li>
-<li><a href="#_line_numbering_highlighting">4. Line-Numbering + Highlighting</a></li>
-<li><a href="#_images">5. Images</a></li>
-<li><a href="#_diagrams">6. Diagrams</a></li>
-<li><a href="#_links">7. Links:</a></li>
+<li><a href="#_pflichtenheft">1. Pflichtenheft</a></li>
+<li><a href="#_projekthandbuch">2. Projekthandbuch</a>
+<ul class="sectlevel2">
+<li><a href="#_gantt_diagramm">2.1. GANTT-Diagramm</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_include_source_code"><a class="anchor" href="#_include_source_code"></a>1. Include Source Code</h2>
+<h2 id="_pflichtenheft"><a class="anchor" href="#_pflichtenheft"></a>1. Pflichtenheft</h2>
 <div class="sectionbody">
-<div class="listingblock">
-<div class="title">Source Code File</div>
-<div class="content">
-<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">FileRenamer</span> <span class="o">{</span>
-<span class="o">...</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">renameFiles</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">try</span> <span class="o">(</span><span class="nc">Stream</span><span class="o">&lt;</span><span class="nc">Path</span><span class="o">&gt;</span> <span class="n">walk</span> <span class="o">=</span> <span class="nc">Files</span><span class="o">.</span><span class="na">walk</span><span class="o">(</span><span class="nc">Paths</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="no">DIRECTORY</span> <span class="o">+</span> <span class="nc">File</span><span class="o">.</span><span class="na">separator</span> <span class="o">+</span> <span class="s">"styles"</span><span class="o">)))</span> <span class="o">{</span>
-            <span class="n">walk</span>
-                    <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="nl">Files:</span><span class="o">:</span><span class="n">isRegularFile</span><span class="o">)</span>
-                    <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">file</span> <span class="o">-&gt;</span> <span class="o">{</span>
-                        <span class="nc">String</span> <span class="n">fileName</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="na">getFileName</span><span class="o">().</span><span class="na">toString</span><span class="o">();</span>
-                        <span class="nc">String</span> <span class="n">newFileName</span> <span class="o">=</span>
-                                <span class="n">fileName</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">fileName</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="mi">4</span><span class="o">)</span>
-                                        <span class="o">+</span> <span class="s">".min"</span>
-                                        <span class="o">+</span> <span class="n">fileName</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">fileName</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="mi">4</span><span class="o">);</span>
-<span class="hll">                        <span class="c1">// tag::rename-file[]</span>
-</span>                        <span class="k">try</span> <span class="o">{</span>
-                            <span class="nc">Files</span><span class="o">.</span><span class="na">move</span><span class="o">(</span><span class="n">file</span><span class="o">,</span> <i class="conum" data-value="1"></i><b>(1)</b>
-                                    <span class="n">file</span><span class="o">.</span><span class="na">getParent</span><span class="o">().</span><span class="na">resolve</span><span class="o">(</span><span class="n">newFileName</span><span class="o">));</span> <i class="conum" data-value="2"></i><b>(2)</b>
-                        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-                            <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
-                        <span class="o">}</span>
-<span class="hll">                        <span class="c1">// end::rename-file[]</span>
-</span>                    <span class="o">});</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-<span class="o">...</span>
-<span class="o">}</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><code>[source, java]</code><br>
-<code>.Java code from project</code><br>
-<code>----</code><br>
-<code>include::src/main/java/at/htl/asciidoc/FileRenamer.java[tag=rename-file,indent=0]</code><br>
-<code>----</code></p>
-</div>
-<div class="listingblock">
-<div class="title">Java code from project</div>
-<div class="content">
-<pre class="rouge highlight"><code data-lang="java"><span class="k">try</span> <span class="o">{</span>
-    <span class="nc">Files</span><span class="o">.</span><span class="na">move</span><span class="o">(</span><span class="n">file</span><span class="o">,</span> <i class="conum" data-value="1"></i><b>(1)</b>
-            <span class="n">file</span><span class="o">.</span><span class="na">getParent</span><span class="o">().</span><span class="na">resolve</span><span class="o">(</span><span class="n">newFileName</span><span class="o">));</span> <i class="conum" data-value="2"></i><b>(2)</b>
-<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-    <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
-<span class="o">}</span></code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Some comments</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Some further comments</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_line_numbering_the_source_code"><a class="anchor" href="#_line_numbering_the_source_code"></a>2. Line Numbering the source code</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre>[source,java,linenums]</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Java code from project</div>
-<div class="content">
-<pre class="rouge highlight"><code data-lang="java"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-</pre></td><td class="code"><pre><span class="k">try</span> <span class="o">{</span>
-    <span class="nc">Files</span><span class="o">.</span><span class="na">move</span><span class="o">(</span><span class="n">file</span><span class="o">,</span> <i class="conum" data-value="1"></i><b>(1)</b>
-            <span class="n">file</span><span class="o">.</span><span class="na">getParent</span><span class="o">().</span><span class="na">resolve</span><span class="o">(</span><span class="n">newFileName</span><span class="o">));</span> <i class="conum" data-value="2"></i><b>(2)</b>
-<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-    <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
-<span class="o">}</span>
-</pre></td></tr></tbody></table></code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_highlight_source_code"><a class="anchor" href="#_highlight_source_code"></a>3. Highlight Source Code</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre>[source,java,highlight=4..5]</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Java code from project</div>
-<div class="content">
-<pre class="rouge highlight"><code data-lang="java"><span class="k">try</span> <span class="o">{</span>
-    <span class="nc">Files</span><span class="o">.</span><span class="na">move</span><span class="o">(</span><span class="n">file</span><span class="o">,</span> <i class="conum" data-value="1"></i><b>(1)</b>
-            <span class="n">file</span><span class="o">.</span><span class="na">getParent</span><span class="o">().</span><span class="na">resolve</span><span class="o">(</span><span class="n">newFileName</span><span class="o">));</span> <i class="conum" data-value="2"></i><b>(2)</b>
-<span class="hll"><span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-</span><span class="hll">    <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
-</span><span class="o">}</span></code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Some comments</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Some further comments</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p><a href="https://asciidoctor.org/docs/user-manual/#highlight-select-lines">Asciidoctor User Manual: Highlight Select Lines</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_line_numbering_highlighting"><a class="anchor" href="#_line_numbering_highlighting"></a>4. Line-Numbering + Highlighting</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre>[source,java,linenums,highlight=4..5]</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Java code from project</div>
-<div class="content">
-<pre class="rouge highlight"><code data-lang="java"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-</pre></td><td class="code"><pre><span class="k">try</span> <span class="o">{</span>
-    <span class="nc">Files</span><span class="o">.</span><span class="na">move</span><span class="o">(</span><span class="n">file</span><span class="o">,</span> <i class="conum" data-value="1"></i><b>(1)</b>
-            <span class="n">file</span><span class="o">.</span><span class="na">getParent</span><span class="o">().</span><span class="na">resolve</span><span class="o">(</span><span class="n">newFileName</span><span class="o">));</span> <i class="conum" data-value="2"></i><b>(2)</b>
-<span class="hll"><span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-</span><span class="hll">    <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
-</span><span class="o">}</span>
-</pre></td></tr></tbody></table></code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Some comments</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Some further comments</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_images"><a class="anchor" href="#_images"></a>5. Images</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>With the backend attribute, it is possible to control the output:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>In the pdf the image is full-size</p>
-</li>
-<li>
-<p>in the slides and html the image is 50% sized</p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>ifdef::backend-html5,backend-revealjs[image:animal-pet-cute-kitten-45201.jpg[width=50%]]
-ifdef::backend-pdf[image:animal-pet-cute-kitten-45201.jpg[]]</pre>
-</div>
-</div>
-<div class="paragraph">
-<div class="title">Cute kitten (credits to <a href="https://www.pexels.com/@pixabay">pixabay</a>)</div>
-<p><span class="image"><img src="images/animal-pet-cute-kitten-45201.jpg" alt="animal pet cute kitten 45201" width="50%"></span></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_diagrams"><a class="anchor" href="#_diagrams"></a>6. Diagrams</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre>[plantuml,bsp,png]
 
-@startuml
-class A
-class B
-A -left-&gt; B
-@enduml</pre>
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/bsp.png" alt="bsp" width="131" height="66">
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_links"><a class="anchor" href="#_links"></a>7. Links:</h2>
+<h2 id="_projekthandbuch"><a class="anchor" href="#_projekthandbuch"></a>2. Projekthandbuch</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://mrhaki.blogspot.com/2019/12/awesome-asciidoctor-auto-number-callouts.html">Haki-Blog</a> &#8594; look at the "related posts" - links at the end of the post</p>
-</li>
-<li>
-<p><a href="https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/" class="bare">https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/</a></p>
-</li>
-<li>
-<p><a href="https://asciidoctor.org/docs/asciidoc-writers-guide/" class="bare">https://asciidoctor.org/docs/asciidoc-writers-guide/</a></p>
-</li>
-<li>
-<p><a href="https://powerman.name/doc/asciidoc">Powerman Cheat Sheet</a></p>
-</li>
-<li>
-<p>Froscon 18: Documentation with any editor
-<a href="https://media.ccc.de/v/froscon2018-2192-documentation_with_any_editor">movie</a>
-<a href="https://programm.froscon.de/2018/system/event_attachments/attachments/000/000/498/original/froscon13-documentationwithanyeditor.pdf">pdf</a></p>
-</li>
-<li>
-<p><a href="https://www.vogella.com/tutorials/AsciiDoc/article.html">Vogella</a></p>
-</li>
-<li>
-<p>Writing documentation with Asciidoctor
-<a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=2ahUKEwj2v4nf4oroAhVkrHEKHbwPCWQQwqsBMAB6BAgKEAQ&amp;url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DaAEXZaL9UUE&amp;usg=AOvVaw3wAmZiQkYusBQ8_BNRBLJi">movie</a>
-<a href="https://www.eclipsecon.org/europe2015/sites/default/files/slides/2015-11-03_Writing_documentation_with_Asciidoctor.pdf">pdf</a></p>
-</li>
-<li>
-<p><a href="https://www.eclipsecon.org/europe2015/sites/default/files/slides/2015-11-03_Writing_documentation_with_Asciidoctor.pdf">Asciidoc Book Editor based on JavaFX 8</a></p>
-</li>
-<li>
-<p><a href="https://plugins.jetbrains.com/plugin/7391-asciidoc">Asciidoctor IntelliJ Plugin Project</a></p>
-</li>
-</ul>
+<div class="sect2">
+<h3 id="_gantt_diagramm"><a class="anchor" href="#_gantt_diagramm"></a>2.1. GANTT-Diagramm</h3>
+<div class="paragraph">
+<p>mit User-Stories (definiert in YouTrack)</p>
+</div>
+<div class="paragraph">
+<p>@startgantt
+printscale weekly
+Project starts the 20th of september 2020
+[Prototype design] as [TASK1] lasts 130 days
+[TASK1] is colored in Lavender/LightBlue
+[Testing] lasts 20 days</p>
+</div>
+<div class="paragraph">
+<p>@endgantt</p>
+</div>
 </div>
 </div>
 </div>
@@ -733,219 +500,8 @@ A -left-&gt; B
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2020-03-09 14:58:47 UTC
+Last updated 2020-03-09 15:09:00 UTC
 </div>
 </div>
-<style>
-pre.rouge table td { padding: 5px; }
-pre.rouge table pre { margin: 0; }
-pre.rouge .cm {
-  color: #999988;
-  font-style: italic;
-}
-pre.rouge .cp {
-  color: #999999;
-  font-weight: bold;
-}
-pre.rouge .c1 {
-  color: #999988;
-  font-style: italic;
-}
-pre.rouge .cs {
-  color: #999999;
-  font-weight: bold;
-  font-style: italic;
-}
-pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cpf {
-  color: #999988;
-  font-style: italic;
-}
-pre.rouge .err {
-  color: #a61717;
-  background-color: #e3d2d2;
-}
-pre.rouge .gd {
-  color: #000000;
-  background-color: #ffdddd;
-}
-pre.rouge .ge {
-  color: #000000;
-  font-style: italic;
-}
-pre.rouge .gr {
-  color: #aa0000;
-}
-pre.rouge .gh {
-  color: #999999;
-}
-pre.rouge .gi {
-  color: #000000;
-  background-color: #ddffdd;
-}
-pre.rouge .go {
-  color: #888888;
-}
-pre.rouge .gp {
-  color: #555555;
-}
-pre.rouge .gs {
-  font-weight: bold;
-}
-pre.rouge .gu {
-  color: #aaaaaa;
-}
-pre.rouge .gt {
-  color: #aa0000;
-}
-pre.rouge .kc {
-  color: #000000;
-  font-weight: bold;
-}
-pre.rouge .kd {
-  color: #000000;
-  font-weight: bold;
-}
-pre.rouge .kn {
-  color: #000000;
-  font-weight: bold;
-}
-pre.rouge .kp {
-  color: #000000;
-  font-weight: bold;
-}
-pre.rouge .kr {
-  color: #000000;
-  font-weight: bold;
-}
-pre.rouge .kt {
-  color: #445588;
-  font-weight: bold;
-}
-pre.rouge .k, pre.rouge .kv {
-  color: #000000;
-  font-weight: bold;
-}
-pre.rouge .mf {
-  color: #009999;
-}
-pre.rouge .mh {
-  color: #009999;
-}
-pre.rouge .il {
-  color: #009999;
-}
-pre.rouge .mi {
-  color: #009999;
-}
-pre.rouge .mo {
-  color: #009999;
-}
-pre.rouge .m, pre.rouge .mb, pre.rouge .mx {
-  color: #009999;
-}
-pre.rouge .sb {
-  color: #d14;
-}
-pre.rouge .sc {
-  color: #d14;
-}
-pre.rouge .sd {
-  color: #d14;
-}
-pre.rouge .s2 {
-  color: #d14;
-}
-pre.rouge .se {
-  color: #d14;
-}
-pre.rouge .sh {
-  color: #d14;
-}
-pre.rouge .si {
-  color: #d14;
-}
-pre.rouge .sx {
-  color: #d14;
-}
-pre.rouge .sr {
-  color: #009926;
-}
-pre.rouge .s1 {
-  color: #d14;
-}
-pre.rouge .ss {
-  color: #990073;
-}
-pre.rouge .s, pre.rouge .sa, pre.rouge .dl {
-  color: #d14;
-}
-pre.rouge .na {
-  color: #008080;
-}
-pre.rouge .bp {
-  color: #999999;
-}
-pre.rouge .nb {
-  color: #0086B3;
-}
-pre.rouge .nc {
-  color: #445588;
-  font-weight: bold;
-}
-pre.rouge .no {
-  color: #008080;
-}
-pre.rouge .nd {
-  color: #3c5d5d;
-  font-weight: bold;
-}
-pre.rouge .ni {
-  color: #800080;
-}
-pre.rouge .ne {
-  color: #990000;
-  font-weight: bold;
-}
-pre.rouge .nf, pre.rouge .fm {
-  color: #990000;
-  font-weight: bold;
-}
-pre.rouge .nl {
-  color: #990000;
-  font-weight: bold;
-}
-pre.rouge .nn {
-  color: #555555;
-}
-pre.rouge .nt {
-  color: #000080;
-}
-pre.rouge .vc {
-  color: #008080;
-}
-pre.rouge .vg {
-  color: #008080;
-}
-pre.rouge .vi {
-  color: #008080;
-}
-pre.rouge .nv, pre.rouge .vm {
-  color: #008080;
-}
-pre.rouge .ow {
-  color: #000000;
-  font-weight: bold;
-}
-pre.rouge .o {
-  color: #000000;
-  font-weight: bold;
-}
-pre.rouge .w {
-  color: #bbbbbb;
-}
-pre.rouge {
-  background-color: #f8f8f8;
-}
-</style>
 </body>
 </html>
