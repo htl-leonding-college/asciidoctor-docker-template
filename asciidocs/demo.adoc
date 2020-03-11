@@ -138,7 +138,7 @@ A -right-> B
 @enduml
 ----
 
-Links:
+== Links:
 
 * https://mrhaki.blogspot.com/2019/12/awesome-asciidoctor-auto-number-callouts.html[Haki-Blog] -> look at the "related posts" - links at the end of the post
 * https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/
