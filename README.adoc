@@ -19,8 +19,8 @@ IMPORTANT: The html-output is generated into a `docs`-folder, so it is published
 
 This are the gh-pages of the template-project.
 
-https://htl-leonding-college.github.io/asciidoctor-docker-template
-https://htl-leonding-college.github.io/asciidoctor-docker-template/demo.html[]
+* https://htl-leonding-college.github.io/asciidoctor-docker-template
+* https://htl-leonding-college.github.io/asciidoctor-docker-template/demo.html[]
 
 == Steps to your own doc-repo
 
