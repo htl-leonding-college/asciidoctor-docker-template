@@ -129,10 +129,10 @@ IMPORTANT: Before using the scripts, revisit them carefully.
 | creates the html-output
 
 | `build-pdf-docker.sh`
-| creates the html-output
+| creates the pdf-output
 
 | `build-reveal-docker.sh`
-| creates the html-output
+| creates the reveal-output for generating slides
 
 | `download-reveal.sh`
 | downloads the reveal-library from the github-repo and unzips the files.
