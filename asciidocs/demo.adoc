@@ -153,3 +153,6 @@ https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=2ahUKEwj2v4n
 https://www.eclipsecon.org/europe2015/sites/default/files/slides/2015-11-03_Writing_documentation_with_Asciidoctor.pdf[pdf]
 * https://www.eclipsecon.org/europe2015/sites/default/files/slides/2015-11-03_Writing_documentation_with_Asciidoctor.pdf[Asciidoc Book Editor based on JavaFX 8]
 * https://plugins.jetbrains.com/plugin/7391-asciidoc[Asciidoctor IntelliJ Plugin Project]
+* A very nice example of a reveal presentation:
+https://github.com/bentolor/java9to13[github-repo],
+https://bentolor.github.io/java9to13/#/[slides]
