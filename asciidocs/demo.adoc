@@ -145,11 +145,11 @@ A -right-> B
 * https://asciidoctor.org/docs/asciidoc-writers-guide/
 * https://powerman.name/doc/asciidoc[Powerman Cheat Sheet]
 * Froscon 18: Documentation with any editor
-https://media.ccc.de/v/froscon2018-2192-documentation_with_any_editor[movie]
+https://media.ccc.de/v/froscon2018-2192-documentation_with_any_editor[movie],
 https://programm.froscon.de/2018/system/event_attachments/attachments/000/000/498/original/froscon13-documentationwithanyeditor.pdf[pdf]
 * https://www.vogella.com/tutorials/AsciiDoc/article.html[Vogella]
 * Writing documentation with Asciidoctor
-https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=2ahUKEwj2v4nf4oroAhVkrHEKHbwPCWQQwqsBMAB6BAgKEAQ&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DaAEXZaL9UUE&usg=AOvVaw3wAmZiQkYusBQ8_BNRBLJi[movie]
+https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=2ahUKEwj2v4nf4oroAhVkrHEKHbwPCWQQwqsBMAB6BAgKEAQ&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DaAEXZaL9UUE&usg=AOvVaw3wAmZiQkYusBQ8_BNRBLJi[movie],
 https://www.eclipsecon.org/europe2015/sites/default/files/slides/2015-11-03_Writing_documentation_with_Asciidoctor.pdf[pdf]
 * https://www.eclipsecon.org/europe2015/sites/default/files/slides/2015-11-03_Writing_documentation_with_Asciidoctor.pdf[Asciidoc Book Editor based on JavaFX 8]
 * https://plugins.jetbrains.com/plugin/7391-asciidoc[Asciidoctor IntelliJ Plugin Project]

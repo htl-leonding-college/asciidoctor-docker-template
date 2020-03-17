@@ -42,7 +42,7 @@ zB Vorgaben vom Auftraggeber
 === Systemarchitektur
 === ...
 
-== Projekthandbuch "Organisatorische Rahmenbedigungen"
+== Projekthandbuch "Organisatorische Rahmenbedingungen"
 
 === GANTT-Diagramm
 
