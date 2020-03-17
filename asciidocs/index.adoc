@@ -1,6 +1,6 @@
 = My Project
 firstname lastname
-1.0, yyyy-mm-dd
+1.0.1, yyyy-mm-dd
 :sourcedir: ../src/main/java
 :icons: font
 :toc: left
