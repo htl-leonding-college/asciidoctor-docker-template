@@ -154,5 +154,7 @@ https://www.eclipsecon.org/europe2015/sites/default/files/slides/2015-11-03_Writ
 * https://www.eclipsecon.org/europe2015/sites/default/files/slides/2015-11-03_Writing_documentation_with_Asciidoctor.pdf[Asciidoc Book Editor based on JavaFX 8]
 * https://plugins.jetbrains.com/plugin/7391-asciidoc[Asciidoctor IntelliJ Plugin Project]
 * A very nice example of a reveal presentation:
-https://github.com/bentolor/java9to13[github-repo],
+** https://github.com/bentolor/java9to13[github-repo],
 https://bentolor.github.io/java9to13/#/[slides]
+** CyberlandConf 2020 https://github.com/CodeFX-org/slides/tree/master/java-after-eight[github-repo],
+https://slides.codefx.org/java-after-eight/2020-03-17-cyberland/#/[slides]
