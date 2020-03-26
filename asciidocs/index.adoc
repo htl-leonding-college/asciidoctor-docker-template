@@ -1,0 +1,65 @@
+= My Project
+firstname lastname
+1.0.1, yyyy-mm-dd
+:sourcedir: ../src/main/java
+:icons: font
+:toc: left
+
+
+== Pflichtenheft "Was mache ich"
+
+
+=== Ausgangssituation
+
+Die HTL Leonding ist eine HTL im oö. Zentralraum mit ca. 1000 Schülern und den Fachabteilungen Medientechnik, Informatik, ....
+
+=== Istzustand
+----
+Beschreibung der speziellen Situation zB in der Abteilung
+----
+=== Problemstellung
+=== Aufgabenstellung
+==== Funktionale Anforderungen
+
+[plantuml,wireframe,png]
+----
+@startsalt
+{
+Name         | "                 "
+Modifiers:   | { (X) public | () default | () private | () protected
+	            [] abstract | [] final   | [] static }
+Superclass:  | { "java.lang.Object " | [Browse...] }
+}
+@endsalt
+----
+==== Nichtfunktionale Anforderungen (NFA)
+=== Ziele
+=== Mengengerüst
+=== Rahmenbedingungen
+zB Vorgaben vom Auftraggeber
+
+== Entwurf "Wie mache ich es"
+=== Systemarchitektur
+=== ...
+
+== Projekthandbuch "Organisatorische Rahmenbedingungen"
+
+=== GANTT-Diagramm
+
+mit User-Stories (definiert in YouTrack)
+
+[plantuml,gantt-protoype,png]
+----
+@startuml
+[Test prototype] lasts 10 days
+[Prototype completed] happens at [Test prototype]'s end
+[Setup assembly line] lasts 12 days
+[Setup assembly line] starts at [Test prototype]'s end
+[Test prototype 2] lasts 3 days
+[Test prototype 2] starts at [Prototype completed]'s end
+@enduml
+----
+
+
+link:demo.html[Demo]
+
