@@ -41,7 +41,8 @@ ifndef::imagesdir[:imagesdir: images]
 
 == Besprochene Themen
 
-* Thema 1
+* Thema 1: Dateiname von Protokollen +
+zB `2020-05-26.Titel-des-Protokolls.adoc`
 * Thema 2
 * Thema 3
 * Thema 4 +
