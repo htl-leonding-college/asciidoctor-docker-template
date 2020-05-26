@@ -4,8 +4,8 @@
 # ONLY WORKS FROM THE PROJECT DIR
 # WILL PUBLISH STUFF ON THE WEBSITE, DON'T SCREW UP
 BUILD_DIR="gh-pages"
-export old=$(PWD)
-export ORIGIN_URL=$(git config --get remote.origin.url)
+OLD=$(PWD)
+ORIGIN_URL=$(git config --get remote.origin.url)
 ${PWD}/build-html-docker.sh
 cd $BUILD_DIR
 git init
@@ -13,7 +13,7 @@ git add .
 git commit -m "$USER - rebuilding gh-pages $(date)"
 git remote add origin $ORIGIN_URL
 git push --force origin master:gh-pages
-cd $old
+cd $OLD
 
 
 # Sources:
