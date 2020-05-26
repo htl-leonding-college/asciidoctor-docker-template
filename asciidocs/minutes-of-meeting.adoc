@@ -1,0 +1,85 @@
+= Besprechungsprotokoll 20.04.2020
+Vorname Nachname
+1.0, yyyy-mm-dd
+ifndef::imagesdir[:imagesdir: images]
+:icons: font
+//:toc: left
+
+.Teilnehmer
+|===
+|anwesend |Verteiler
+
+|Vorname Nachname
+|
+
+|A. Anton (teilweise)
+|
+
+|B. Berta
+|
+
+|C. Cäsar
+|
+|===
+
+.Ort und Zeit
+[cols=2*]
+|===
+|Ort
+|Online-Unterricht (Discord)
+
+|von-bis
+|Mo. 20.4.2020, 2. und 3. EH
+|Dauer
+|70 min
+|===
+
+
+
+== Besprochene Themen
+
+* Thema 1
+* Thema 2
+* Thema 3
+* Thema 4
+* Thema 5
+
+
+=== Vereinbarungen und Entscheidungen
+
+==== Vereinbarungen
+
+
+
+.Was wurde vereinbart?
+[%autowidth]
+|===
+|wer |macht was |bis wann
+
+| Hr. Dora
+| Erstellung des UCD
+| 20.06.2020
+
+|...
+a|
+.Ev. Bilder und Diagramme
+image:animal-pet-cute-kitten-45201.jpg[width=400px]
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+|1.06.2020
+
+|Fr. Emil
+a|
+.Class Diagram
+[plantuml,CLD,png]
+----
+@startuml
+class City
+class Street
+City "1" <--right- "*" Street
+@enduml
+----
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+|3.06.2020
+|===
