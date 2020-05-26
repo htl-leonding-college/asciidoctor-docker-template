@@ -22,7 +22,7 @@ Two scripts are available:
 
 This are the gh-pages of the template-project.
 
-* https://htl-leonding-college.github.io/asciidoctor-docker-template
+* https://htl-leonding-college.github.io/asciidoctor-docker-template/index.html[]
 * https://htl-leonding-college.github.io/asciidoctor-docker-template/demo.html[]
 * https://htl-leonding-college.github.io/asciidoctor-docker-template/minutes-of-meeting.html[]
 
