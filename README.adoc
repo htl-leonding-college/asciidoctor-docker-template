@@ -4,16 +4,19 @@
 
 == Overview
 
-The documents are generated in a Docker-container.
-Three scripts are available:
+This is a template-project for
 
-* for html-pages -> build-html-docker.sh
-* for slides -> build-reveal-docker.sh
-* for pds -> build-pdf-docker.sh
+* generating AsciiDoc-Files to html-files and
+* deploying the html-files to gh-pages,
+* where the gh-pages are located in an branch of the repo.
 
-For each output (revealjs, html5 and pdf) a single folder is created.
+AsciiDoctor - the software for converting the .adoc-files to .html-files - is executed in a Docker container.
+So you have nothing to install on your local machine, except Docker
 
-IMPORTANT: The html-output is generated into a `docs`-folder, so it is published to gh-pages automatically.
+Two scripts are available:
+
+* build-html-docker.sh -> builds the .html-pages in the folder gh-pages
+* publish-gh-pages.sh -> buils and deploys the gh-pages
 
 == gh-pages
 
@@ -21,6 +24,7 @@ This are the gh-pages of the template-project.
 
 * https://htl-leonding-college.github.io/asciidoctor-docker-template
 * https://htl-leonding-college.github.io/asciidoctor-docker-template/demo.html[]
+* https://htl-leonding-college.github.io/asciidoctor-docker-template/minutes-of-meeting.html[]
 
 == Steps to your own doc-repo
 

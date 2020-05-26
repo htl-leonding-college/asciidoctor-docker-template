@@ -47,6 +47,7 @@ public class FileRenamer {
 `include::{sourcedir}/at/htl/asciidoc/FileRenamer.java[tag=rename-file,indent=0]` +
 `----`
 
+////
 [source, java]
 .Java code from project
 ----
@@ -55,6 +56,7 @@ include::{sourcedir}/at/htl/asciidoc/FileRenamer.java[tag=rename-file,indent=0]
 
 <1> Some comments
 <2> Some further comments
+////
 
 == Line Numbering the source code
 
@@ -62,11 +64,15 @@ include::{sourcedir}/at/htl/asciidoc/FileRenamer.java[tag=rename-file,indent=0]
 [source,java,linenums]
 ----
 
+////
+
 [source,java,linenums]
 .Java code from project
 ----
 include::{sourcedir}/at/htl/asciidoc/FileRenamer.java[tag=rename-file,indent=0]
 ----
+
+////
 
 == Highlight Source Code
 
@@ -74,6 +80,7 @@ include::{sourcedir}/at/htl/asciidoc/FileRenamer.java[tag=rename-file,indent=0]
 [source,java,highlight=4..5]
 ----
 
+////
 [source,java,highlight=4..5]
 .Java code from project
 ----
@@ -82,6 +89,8 @@ include::{sourcedir}/at/htl/asciidoc/FileRenamer.java[tag=rename-file,indent=0]
 
 <1> Some comments
 <2> Some further comments
+
+////
 
 https://asciidoctor.org/docs/user-manual/#highlight-select-lines[Asciidoctor User Manual: Highlight Select Lines]
 
@@ -91,6 +100,8 @@ https://asciidoctor.org/docs/user-manual/#highlight-select-lines[Asciidoctor Use
 [source,java,linenums,highlight=4..5]
 ----
 
+////
+
 [source,java,linenums,highlight=4..5]
 .Java code from project
 ----
@@ -99,6 +110,8 @@ include::{sourcedir}/at/htl/asciidoc/FileRenamer.java[tag=rename-file,indent=0]
 
 <1> Some comments
 <2> Some further comments
+
+////
 
 == Images
 
