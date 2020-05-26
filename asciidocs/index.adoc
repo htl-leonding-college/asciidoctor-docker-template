@@ -5,6 +5,7 @@ firstname lastname
 :icons: font
 :toc: left
 
+Git-Repository: https://github.com/htl-leonding-college/asciidoctor-docker-template/tree/gh-pages[asciidoctor-docker-template]
 
 == Pflichtenheft "Was mache ich"
 
@@ -60,6 +61,6 @@ mit User-Stories (definiert in YouTrack)
 @enduml
 ----
 
-
-link:demo.html[Demo]
+* link:minutes-of-meeting.html[Protokollvorlage]
+* link:demo.html[Demo]
 
