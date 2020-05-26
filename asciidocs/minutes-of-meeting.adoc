@@ -1,6 +1,6 @@
 = Besprechungsprotokoll 20.04.2020
 Vorname Nachname
-1.0, yyyy-mm-dd
+1.0, yyyy-mm-dd: Some notes
 ifndef::imagesdir[:imagesdir: images]
 :icons: font
 //:toc: left
@@ -13,13 +13,16 @@ ifndef::imagesdir[:imagesdir: images]
 |
 
 |A. Anton (teilweise)
-|
+|A. Anton
 
 |B. Berta
-|
+|B. Berta
 
 |C. Cäsar
+|C. Cäsar
+
 |
+|D. Dora
 |===
 
 .Ort und Zeit
@@ -41,15 +44,12 @@ ifndef::imagesdir[:imagesdir: images]
 * Thema 1
 * Thema 2
 * Thema 3
-* Thema 4
+* Thema 4 +
+Ev. mit Erläuterungen
 * Thema 5
 
 
-=== Vereinbarungen und Entscheidungen
-
-==== Vereinbarungen
-
-
+== Vereinbarungen und Entscheidungen
 
 .Was wurde vereinbart?
 [%autowidth]
@@ -57,7 +57,7 @@ ifndef::imagesdir[:imagesdir: images]
 |wer |macht was |bis wann
 
 | Hr. Dora
-| Erstellung des UCD
+a| Erstellung des UCD
 | 20.06.2020
 
 |...
