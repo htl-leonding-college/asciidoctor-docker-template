@@ -14,7 +14,7 @@ git commit -m "$USER - rebuilding gh-pages $(date)"
 git remote add origin $ORIGIN_URL
 git push --force origin master:gh-pages
 cd $OLD
-
+rm -rf $BUILD_DIR
 
 # Sources:
 # maybe better with subtrees -> https://gist.github.com/cobyism/4730490
