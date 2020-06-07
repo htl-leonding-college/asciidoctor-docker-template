@@ -1,11 +1,24 @@
 = My Project
 firstname lastname
-1.0.1, yyyy-mm-dd
+1.1.0, yyyy-mm-dd: Some notes
+ifndef::imagesdir[:imagesdir: images]
+//:toc-placement!:  // prevents the generation of the doc at this position, so it can be printed afterwards
 :sourcedir: ../src/main/java
 :icons: font
+:sectnums:    // Nummerierung der Überschriften / section numbering
 :toc: left
 
-Git-Repository: https://github.com/htl-leonding-college/asciidoctor-docker-template/tree/gh-pages[asciidoctor-docker-template]
+//Need this blank line after ifdef, don't know why...
+ifdef::backend-html5[]
+
+// https://fontawesome.com/v4.7.0/icons/
+icon:file-text-o[link=https://raw.githubusercontent.com/htl-leonding-college/asciidoctor-docker-template/master/asciidocs/{docname}.adoc] ‏ ‏ ‎
+icon:github-square[link=https://github.com/htl-leonding-college/asciidoctor-docker-template] ‏ ‏ ‎
+icon:home[link=https://htl-leonding.github.io/]
+endif::backend-html5[]
+
+// print the toc here (not at the default position)
+//toc::[]
 
 == Pflichtenheft "Was mache ich"
 

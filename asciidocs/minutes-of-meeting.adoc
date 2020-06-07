@@ -1,9 +1,20 @@
-= Besprechungsprotokoll 20.04.2020
-Vorname Nachname
+= Besprechungsprotokoll dd.mm.yyyy
+firstname lastname
 1.0, yyyy-mm-dd: Some notes
 ifndef::imagesdir[:imagesdir: images]
 :icons: font
+//:sectnums:    // Nummerierung der Überschriften / section numbering
 //:toc: left
+
+//Need this blank line after ifdef, don't know why...
+ifdef::backend-html5[]
+
+// https://fontawesome.com/v4.7.0/icons/
+icon:file-text-o[link=https://raw.githubusercontent.com/htl-leonding-college/asciidoctor-docker-template/master/asciidocs/{docname}.adoc] ‏ ‏ ‎
+icon:github-square[link=https://github.com/htl-leonding-college/asciidoctor-docker-template] ‏ ‏ ‎
+icon:home[link=https://htl-leonding.github.io/]
+endif::backend-html5[]
+
 
 .Teilnehmer
 |===

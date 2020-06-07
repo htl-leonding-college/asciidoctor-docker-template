@@ -5,9 +5,20 @@ ifndef::sourcedir[:sourcedir: ../src/main/java]
 ifndef::imagesdir[:imagesdir: images]
 ifndef::backend[:backend: html5]
 :icons: font
+:sectnums:    // Nummerierung der Überschriften / section numbering
 :toc: left
 
 == Include Source Code
+
+.A collapsed list
+[%collapsible]
+====
+
+. a
+. b
+. c
+
+====
 
 .Source Code File
 [source,java,highlight=13;20]
