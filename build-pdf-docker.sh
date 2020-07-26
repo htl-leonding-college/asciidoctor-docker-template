@@ -22,5 +22,5 @@ docker run --rm \
            '*.adoc'
 
 # https://asciidoctor.org/docs/asciidoctor-pdf/
-
-AsciiDoctor - Dokumentation schreibenkann Spass machen!
+# https://share.stoeps.de/Froscon14-DocumentationWithAnyEditor.html
+# https://docplayer.org/9293416-Asciidoctor-dokumentation-schreiben-kann-spass-machen.html
