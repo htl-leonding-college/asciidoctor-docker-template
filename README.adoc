@@ -16,7 +16,7 @@ So you have nothing to install on your local machine, except Docker
 Two scripts are available:
 
 * build-html-docker.sh -> builds the .html-pages in the folder gh-pages
-* publish-gh-pages.sh -> buils and deploys the gh-pages
+* publish-gh-pages.sh -> builds and deploys the gh-pages
 
 == gh-pages
 
