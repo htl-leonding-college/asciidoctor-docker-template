@@ -18,6 +18,10 @@ Two scripts are available:
 
 additionally is a script `build-pdf-docker.sh` for creating a pdf document.
 
+## How to use Asciidoctor
+
+Download the latest [release](https://github.com/htl-leonding-college/asciidoctor-docker-template/releases) in your project and run the shell-scripts.
+
 ## Demo Documents
 
 You can find demo documents in the `asciidocs.demo`-folder:
