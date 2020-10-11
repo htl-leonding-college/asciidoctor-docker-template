@@ -36,8 +36,6 @@ asciidoctor \
 rm -rf ./.asciidoctor
 echo Creating html-docs in Docker finished ...
 
-##rm -rf -v $BUILD_DIR/revealjs
-#rm -rf -v $BUILD_DIR/.asciidoctor
 rm -rf -v $BUILD_DIR/*.adoc
 rm -v $BUILD_DIR/docinfo.html
 
