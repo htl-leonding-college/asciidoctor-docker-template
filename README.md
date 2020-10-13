@@ -21,7 +21,7 @@ Two scripts are available:
 additionally is a script `build-pdf-docker.sh` for creating a pdf document.
 
 
-## Option 2: [prefered] Run script inside Docker-container
+## Option 2: [preferred] Run script inside Docker-container
 
 * First create a `.env`-file with
 ```
