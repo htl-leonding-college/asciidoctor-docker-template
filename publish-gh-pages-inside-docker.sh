@@ -18,8 +18,8 @@ ${PWD}/build-html-docker-inside-docker.sh
 cd $BUILD_DIR
 echo "GIT_GLOBAL_MAIL->${GIT_GLOBAL_MAIL}"
 echo "GIT_GLOBAL_USER_NAME->${GIT_GLOBAL_USER_NAME}"
-git config --global user.email GIT_GLOBAL_MAIL
-git config --global user.name GIT_GLOBAL_USER_NAME
+git config --global user.email ${GIT_GLOBAL_MAIL}
+git config --global user.name ${GIT_GLOBAL_USER_NAME}
 git init
 git add .
 git commit -m "$USER - rebuilding gh-pages $(date)"
