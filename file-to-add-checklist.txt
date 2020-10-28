@@ -1,3 +1,5 @@
+after zipping, clean the zip file from macos-stuff
+
 .
 ├── asciidocs
 │   ├── docinfo.html
