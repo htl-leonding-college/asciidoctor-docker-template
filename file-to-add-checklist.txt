@@ -2,23 +2,24 @@ after zipping, clean the zip file from macos-stuff
 
 .
 ├── asciidocs
-│   ├── docinfo.html
-│   ├── images
-│   ├── index.adoc
-│   └── themes
-│       ├── favicon.ico
-│       └── favicon.png
+│       ├── docinfo.html
+│       ├── images
+│       ├── index.adoc
+│       └── themes
+│           ├── favicon.ico
+│           └── favicon.png
 ├── asciidocs.demo
-│   ├── demo.adoc
-│   ├── images
-│   │   └── animal-pet-cute-kitten-45201.jpg
-│   ├── index.adoc
-│   ├── minutes-of-meeting.adoc
-│   └── sysspec.adoc
+│       ├── demo.adoc
+│       ├── images
+│       │       └── .keep
+│       ├── index.adoc
+│       ├── minutes-of-meeting.adoc
+│       ├── plantuml
+│       │       └── .keep
+│       └── sysspec.adoc
 ├── build-html-docker-inside-docker.sh
 ├── docs-as-code.zip
 ├── file-to-add-checklist.txt
 ├── publish-gh-pages-inside-docker.sh
 └── run-inside-docker.sh
 
-5 directories, 14 files
