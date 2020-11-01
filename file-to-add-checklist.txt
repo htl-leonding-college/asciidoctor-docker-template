@@ -1,10 +1,13 @@
-after zipping, clean the zip file from macos-stuff
+
 
 .
+├── .env.template
+├── .gitignore
 ├── asciidocs
 │       ├── docinfo.html
 │       ├── images
 │       ├── index.adoc
+│       ├── plantuml
 │       └── themes
 │           ├── favicon.ico
 │           └── favicon.png
@@ -18,8 +21,10 @@ after zipping, clean the zip file from macos-stuff
 │       │       └── .keep
 │       └── sysspec.adoc
 ├── build-html-docker-inside-docker.sh
-├── docs-as-code.zip
-├── file-to-add-checklist.txt
 ├── publish-gh-pages-inside-docker.sh
+├── README.txt
 └── run-inside-docker.sh
 
+-> docs-as-code.zip
+
+after zipping, clean the zip file from macos-stuff
