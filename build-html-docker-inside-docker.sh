@@ -46,6 +46,7 @@ adoc=$(find ${d} -type f -name "*.adoc")
 if [[ (-n $adoc) ]]
 then
     res="${d//[^'/']}"
+    path=""
     for i in ${#res} ; do
         path+="../"
     done
@@ -98,5 +99,4 @@ done
 # Creating a Dockerized Hugo + AsciiDoctor Toolchain
 # https://rgielen.net/posts/2019/creating-a-dockerized-hugo-asciidoctor-toolchain/
 # https://rgielen.net/posts/2019/creating-a-blog-with-hugo-and-asciidoctor/
-
 
