@@ -9,7 +9,7 @@ cp -r -p -v asciidocs/docinfo.html $BUILD_DIR
 cp -r -p -v asciidocs/.nojekyll $BUILD_DIR
 cp -r -p -v asciidocs/index.adoc $BUILD_DIR
 cp -r -p -v asciidocs/*.adoc $BUILD_DIR
-for d in $(find ./asciidocs -type d -maxdepth 1 -mindepth 1); do
+for d in $(find ./asciidocs -maxdepth 1 -mindepth 1 -type d); do
   cp -r -p -v asciidocs/${d##*/} $BUILD_DIR/${d##*/}
 done
 #uncomment it when you want to copy the source code into the gh-pages (for including source code into your document)
@@ -40,11 +40,16 @@ rm -v $BUILD_DIR/docinfo.html
 rm -rf -v $BUILD_DIR/*.adoc
 echo Creating html-docs in asciidocs in Docker finished ...
 
-for d in $(find ${BUILD_DIR}/ -type d -maxdepth 1 -mindepth 1); do
+for d in $(find ${BUILD_DIR}/ -mindepth 1 -type d); do
   echo searching in ${d}
 adoc=$(find ${d} -type f -name "*.adoc")
 if [[ (-n $adoc) ]]
 then
+    res="${d//[^'/']}"
+    path=""
+    for i in ${#res} ; do
+        path+="../"
+    done
     BUILD_DIR="${d}"
     asciidoctor \
       -r asciidoctor-diagram \
@@ -54,12 +59,12 @@ then
       -a rouge-theme=github \
       -a rouge-linenums-mode=inline \
       -a docinfo=shared \
-      -a imagesdir=images \
+      -a imagesdir=${path}images \
       -a toc=left \
       -a toclevels=2 \
       -a sectanchors=true \
       -a sectnums=true \
-      -a favicon=themes/favicon.png \
+      -a favicon=${path}themes/favicon.png \
       -a sourcedir=src/main/java \
       -b html5 \
       "${BUILD_DIR}/*.adoc"
@@ -94,5 +99,4 @@ done
 # Creating a Dockerized Hugo + AsciiDoctor Toolchain
 # https://rgielen.net/posts/2019/creating-a-dockerized-hugo-asciidoctor-toolchain/
 # https://rgielen.net/posts/2019/creating-a-blog-with-hugo-and-asciidoctor/
-
 
