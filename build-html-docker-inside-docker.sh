@@ -9,7 +9,7 @@ cp -r -p -v asciidocs/docinfo.html $BUILD_DIR
 cp -r -p -v asciidocs/.nojekyll $BUILD_DIR
 cp -r -p -v asciidocs/index.adoc $BUILD_DIR
 cp -r -p -v asciidocs/*.adoc $BUILD_DIR
-for d in $(find ./asciidocs -type d -maxdepth 1 -mindepth 1); do
+for d in $(find ./asciidocs -maxdepth 1 -mindepth 1 -type d); do
   cp -r -p -v asciidocs/${d##*/} $BUILD_DIR/${d##*/}
 done
 #uncomment it when you want to copy the source code into the gh-pages (for including source code into your document)
@@ -38,9 +38,9 @@ asciidoctor \
 rm -rf ./.asciidoctor
 rm -v $BUILD_DIR/docinfo.html
 rm -rf -v $BUILD_DIR/*.adoc
-echo Creating html-docs in asciidocs in Docker finished ...
+ech Creating html-docs in asciidocs in Docker finished ...
 
-for d in $(find ${BUILD_DIR}/ -type d -mindepth 1); do
+for d in $(find ${BUILD_DIR}/ -mindepth 1 -type d); do
   echo searching in ${d}
 adoc=$(find ${d} -type f -name "*.adoc")
 if [[ (-n $adoc) ]]
