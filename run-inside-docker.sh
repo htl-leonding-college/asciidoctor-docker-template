@@ -11,7 +11,7 @@ docker run --rm \
 cd $PWD/$BUILD_DIR
 CURRENT_FOLDER=${PWD}
 echo "current folder->${CURRENT_FOLDER}"
-git push --force origin master:gh-pages
+git push --force origin main:gh-pages
 echo gh-pages pushed to github ...
 cd $OLD
 rm -rf $BUILD_DIR

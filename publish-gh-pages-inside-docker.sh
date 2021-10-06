@@ -21,8 +21,9 @@ echo "GIT_GLOBAL_USER_NAME->${GIT_GLOBAL_USER_NAME}"
 git config --global user.email ${GIT_GLOBAL_MAIL}
 git config --global user.name ${GIT_GLOBAL_USER_NAME}
 git init
+git branch -M main
 git add .
-git commit -m "$USER - rebuilding gh-pages $(date)"
+git commit -m "$GIT_GLOBAL_USER_NAME - rebuilding gh-pages $(date)"
 git remote add origin $ORIGIN_URL
 
 
