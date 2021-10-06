@@ -9,3 +9,4 @@ gh-pages/
 *.iml
 .DS_Store
 .env
+*.zip
