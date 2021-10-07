@@ -38,7 +38,7 @@ asciidoctor \
 rm -rf ./.asciidoctor
 rm -v $BUILD_DIR/docinfo.html
 rm -rf -v $BUILD_DIR/*.adoc
-echo Creating html-docs in asciidocs in Docker finished ...
+ech Creating html-docs in asciidocs in Docker finished ...
 
 for d in $(find ${BUILD_DIR}/ -mindepth 1 -type d); do
   echo searching in ${d}
