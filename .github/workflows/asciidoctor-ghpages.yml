@@ -1,0 +1,53 @@
+name: asciidoctor-ghpages
+# source: https://github.com/manoelcampos/asciidoctor-ghpages-action
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    paths:
+      - 'asciidocs/**'
+    branches: [ master, main ]
+  pull_request:
+    paths:
+      - 'asciidocs/**'
+    branches: [ master, main ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+      
+    # Includes the AsciiDoctor GitHub Pages Action to convert adoc files to html and publish to gh-pages branch
+    - name: asciidoctor-ghpages
+      uses: manoelcampos/asciidoctor-ghpages-action@v2
+      with:
+        asciidoctor_params: --attribute=nofooter
+                            -r asciidoctor-diagram
+                            -a icons=font
+                            -a experimental=true
+                            -a source-highlighter=rouge
+                            -a rouge-theme=github
+                            -a rouge-linenums-mode=inline
+                            -a docinfo=shared
+                            -a imagesdir=images
+                            -a toc=left
+                            -a toclevels=2
+                            -a sectanchors=true
+                            -a sectnums=true
+                            -a favicon=themes/favicon.png
+                            -a sourcedir=src/main/java
+                            -b html5
+        post_build: "git add -f *.png"
+        pdf_build: false
+        # adoc_file_ext: .ascii # default is .adoc
+        source_dir: ${{ github.workspace }}/asciidocs/ # default is .
+        # slides_build: true
+        # pre_build:
+        # post_build:
